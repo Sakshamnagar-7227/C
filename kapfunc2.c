@@ -1,23 +1,26 @@
 #include<stdio.h>
 #include<math.h>
-int main()
+int kap(int n)
 {
-    int n,k,l,ri,c=0,s;
-    printf("Enter the number: ");
-    scanf("%d",&n);
+    int l,ri,sqr,k,c=0,s;
     int dup=n;
-    while (n!=0)
+    while(n!=0)
     {
         n=n/10;
         c++;
     }
     n=dup;
-    int sqr=n*n;
-        k=(float)pow(10,c);
-        l=sqr%k;
-        ri=sqr/k;
-        s=l+ri;
-    if (s==n)
+    sqr=n*n;
+    k=(float)pow(10,c);
+    l=sqr%k;
+    ri=sqr/k;
+    s=l+ri;
+    return s;
+}
+int main()
+{
+    int n=9;
+    if (kap(n)==n)
     {
         printf("The number is a Kaprekar");
     }
@@ -25,4 +28,5 @@ int main()
     {
         printf("The number is not a Kaprekar");
     }
+    return 0;   
 }
